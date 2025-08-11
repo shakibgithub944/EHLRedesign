@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { fetchCareers as fetchCareersAPI } from "@/lib/api";
 
 declare global {
   interface Window {
@@ -20,15 +21,7 @@ export default function FutureCareers() {
   const fetchCareers = async (page: number = 1) => {
     try {
       setLoading(true);
-      const response = await fetch(
-        `https://www.ehlcrm.theskyroute.com/api/test/top-future-career?page=${page}`
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch careers data");
-      }
-
-      const data = await response.json();
+      const data = await fetchCareersAPI(page);
 
       setCareers(data.rows?.data || []);
       setCurrentPage(data.rows?.current_page || 1);

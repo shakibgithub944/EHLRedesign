@@ -14,7 +14,7 @@ A modern, responsive web application for exploring popular subjects and future c
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: React 18 with TypeScript
+- **Frontend Framework**: React 19 with TypeScript, jQuery
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS
 - **State Management**: TanStack Query (React Query)
