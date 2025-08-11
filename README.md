@@ -176,6 +176,49 @@ The built files will be in the `dist/public` directory.
 npm run preview
 ```
 
+### Deploy to Vercel
+
+#### Option 1: Vercel CLI (Recommended)
+
+1. Install Vercel CLI:
+
+```bash
+npm install -g vercel
+```
+
+2. Login to Vercel:
+
+```bash
+vercel login
+```
+
+3. Deploy:
+
+```bash
+vercel
+```
+
+#### Option 2: GitHub Integration
+
+1. Push your code to GitHub
+2. Connect your GitHub repository to Vercel
+3. Vercel will automatically deploy on every push
+
+#### Environment Variables for Vercel
+
+Set these environment variables in your Vercel dashboard:
+
+- `VITE_API_URL`: `https://www.ehlcrm.theskyroute.com/api`
+
+#### Vercel Configuration
+
+The project includes a `vercel.json` file with the following configurations:
+
+- Static build using Vite
+- SPA routing support
+- Environment variable mapping
+- Asset handling for images and static files
+
 ## 🤝 Contributing
 
 1. Fork the repository
