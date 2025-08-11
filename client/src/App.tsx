@@ -5,8 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import PopularSubjects from "@/pages/PopularSubjects";
 import SubjectDetails from "@/pages/SubjectDetails";
-import FutureCareers from "@/pages/FutureCareers";
-import CareerDetails from "@/pages/CareerDetails";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -15,8 +13,6 @@ function Router() {
       <Route path="/" component={PopularSubjects} />
       <Route path="/popular-subjects" component={PopularSubjects} />
       <Route path="/subject/:id" component={SubjectDetails} />
-      <Route path="/future-careers" component={FutureCareers} />
-      <Route path="/career/:id" component={CareerDetails} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
