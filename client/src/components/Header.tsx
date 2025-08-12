@@ -92,8 +92,9 @@ export default function Header() {
               >
                 Subjects Area
               </Link>
-              <Link
+              <a
                 href="https://future-career-sigma.vercel.app/"
+                target="_blank"
                 className={`${
                   location === "/future-careers"
                     ? "text-primary-orange"
@@ -102,7 +103,7 @@ export default function Header() {
                 data-testid="link-future-career"
               >
                 Future Career
-              </Link>
+              </a>
             </nav>
 
             <div className="flex items-center space-x-2 sm:space-x-4">
@@ -133,8 +134,9 @@ export default function Header() {
           {isMobileMenuOpen && (
             <div className="lg:hidden border-t border-gray-200 py-4 bg-white">
               <nav className="flex flex-col space-y-4 px-4">
-                <Link
+                <a
                   href="https://future-career-sigma.vercel.app/"
+                  target="_blank"
                   className={`${
                     location === "/future-careers"
                       ? "text-primary-orange"
@@ -143,7 +145,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Future Career
-                </Link>
+                </a>
                 <Link
                   href="/"
                   className={`${
