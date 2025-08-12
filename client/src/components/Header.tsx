@@ -134,7 +134,7 @@ export default function Header() {
             <div className="lg:hidden border-t border-gray-200 py-4 bg-white">
               <nav className="flex flex-col space-y-4 px-4">
                 <Link
-                  href="/future-careers"
+                  href="https://future-career-sigma.vercel.app/"
                   className={`${
                     location === "/future-careers"
                       ? "text-primary-orange"
