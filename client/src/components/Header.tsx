@@ -93,7 +93,7 @@ export default function Header() {
                 Subjects Area
               </Link>
               <Link
-                href="/future-careers"
+                href="https://future-career-sigma.vercel.app/"
                 className={`${
                   location === "/future-careers"
                     ? "text-primary-orange"
