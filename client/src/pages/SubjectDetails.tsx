@@ -286,16 +286,6 @@ export default function SubjectDetails() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Button
                     className="gradient-orange w-full sm:flex-1 py-3 text-sm sm:text-base"
-                    onClick={() =>
-                      window.open(
-                        `https://ehlweb.theskyroute.com/search-course?subject_area=${
-                          subject.id
-                        }&name=${subject.subject_area
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`,
-                        "_blank"
-                      )
-                    }
                     data-testid="button-find-courses"
                   >
                     <i className="fas fa-search mr-2"></i>

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { BookOpenIcon, BriefcaseIcon } from "lucide-react";
 
 export default function PopularSubjects() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -80,44 +81,66 @@ export default function PopularSubjects() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-
       {/* Hero Section */}
-      <section className="gradient-orange text-white py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="animate-slide-up text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-                Find Most Popular
-                <span className="block text-yellow-200">Subjects to Study</span>
+      <section className="relative bg-white text-gray-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-6">
+              <span className="inline-block text-sm font-semibold text-[#97c01f] mb-3">
+                Your Path to Success
+              </span>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                Transform Your Educational Journey
+                <span className="block text-[#e97006]">
+                  with Expert Guidance
+                </span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed opacity-90 max-w-2xl mx-auto lg:mx-0">
-                Our expert consultants will guide you in choosing the best
-                academic and career path, ensuring you make informed decisions
-                for a successful future.
+
+              <p className="mt-6 text-lg text-gray-600 max-w-xl leading-relaxed">
+                Discover the perfect academic path and career opportunities
+                tailored to your goals. Our expert consultants are here to guide
+                you every step of the way.
               </p>
-              <Button
-                className="bg-white text-primary-orange px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:shadow-xl transition-all transform hover:scale-105 w-full sm:w-auto"
-                data-testid="button-book-consultation"
-              >
-                <i className="fas fa-calendar-alt mr-2 sm:mr-3"></i>
-                <span className="hidden sm:inline">Book Free Consultation</span>
-                <span className="sm:hidden">Book Consultation</span>
-              </Button>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="#subjects">
+                  <button className="flex items-center gap-2 bg-[#e97006] text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-[#cf6004] transition">
+                    <BookOpenIcon className="w-5 h-5" />
+                    Popular Subjects
+                  </button>
+                </a>
+
+                {/* <Link to="/careers">
+                  <button className="flex items-center gap-2 border-2 border-[#97c01f] text-[#97c01f] font-semibold px-6 py-3 rounded-xl hover:bg-[#97c01f] hover:text-white transition">
+                    <BriefcaseIcon className="w-5 h-5" />
+                    Future Careers
+                  </button>
+                </Link> */}
+              </div>
             </div>
-            <div className="relative animate-bounce-gentle mt-8 lg:mt-0 order-first lg:order-last">
-              <img
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                alt="Students studying with modern technology and books"
-                className="rounded-xl sm:rounded-2xl shadow-2xl w-full h-auto max-h-64 sm:max-h-80 md:max-h-96 lg:max-h-none object-cover"
-              />
+
+            {/* Right Image Card */}
+            <div className="lg:col-span-6">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&h=1080"
+                  alt="Students studying together"
+                  className="w-full h-72 lg:h-[400px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Popular Subjects Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-neutral-gray">
+      <section
+        id="subjects"
+        className="py-12 sm:py-16 md:py-20 lg:py-24 bg-neutral-gray"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-text mb-4 sm:mb-6">
@@ -181,6 +204,13 @@ export default function PopularSubjects() {
                       </Badge>
                     )}
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-2 mt-auto">
+                      <Button
+                        className="flex-1 gradient-green text-white py-2 px-3 sm:px-4 rounded-lg font-medium text-xs sm:text-sm hover:shadow-lg transition-all"
+                        data-testid={`button-find-courses-${subject.id}`}
+                      >
+                        <span className="hidden sm:inline">Find Courses</span>
+                        <span className="sm:hidden">Courses</span>
+                      </Button>
                       <Link href={`/subject/${subject.id}`} className="flex-1">
                         <Button
                           className="w-full gradient-orange text-white py-2 px-3 sm:px-4 rounded-lg font-medium text-xs sm:text-sm hover:shadow-lg transition-all"
@@ -190,23 +220,6 @@ export default function PopularSubjects() {
                           <span className="sm:hidden">Details</span>
                         </Button>
                       </Link>
-                      <Button
-                        className="flex-1 gradient-green text-white py-2 px-3 sm:px-4 rounded-lg font-medium text-xs sm:text-sm hover:shadow-lg transition-all"
-                        onClick={() =>
-                          window.open(
-                            `https://ehlweb.theskyroute.com/search-course?subject_area=${
-                              subject.id
-                            }&name=${subject.subject_area
-                              .toLowerCase()
-                              .replace(/\s+/g, "-")}`,
-                            "_blank"
-                          )
-                        }
-                        data-testid={`button-find-courses-${subject.id}`}
-                      >
-                        <span className="hidden sm:inline">Find Courses</span>
-                        <span className="sm:hidden">Courses</span>
-                      </Button>
                     </div>
                   </CardContent>
                 </Card>

@@ -83,7 +83,7 @@ export default function Header() {
             </Link>
 
             <nav className="hidden lg:flex space-x-6 xl:space-x-8">
-              <Link
+              {/* <Link
                 href="/"
                 className={`${
                   location === "/" ? "text-primary-orange" : "text-dark-text"
@@ -103,20 +103,22 @@ export default function Header() {
                 data-testid="link-future-career"
               >
                 Future Career
-              </a>
+              </a> */}
             </nav>
 
-            <div className="flex items-center space-x-2 sm:space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4 gap-2">
               <button
-                className="gradient-orange text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:shadow-lg transition-all text-xs sm:text-sm"
+                className="sm:block hidden gradient-orange text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:shadow-lg transition-all text-xs sm:text-sm"
                 data-testid="button-find-course"
               >
-                <span className="hidden sm:inline">FIND COURSE</span>
-                <span className="sm:hidden">FIND</span>
+                <a href="#subjects">
+                  <span className="hidden sm:inline">FIND SUBJECT</span>
+                  <span className="sm:hidden">FIND</span>
+                </a>
               </button>
 
               {/* Mobile menu button */}
-              <button
+              {/* <button
                 className="lg:hidden p-2 rounded-md text-dark-text hover:text-primary-orange hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 data-testid="button-mobile-menu"
@@ -126,12 +128,12 @@ export default function Header() {
                     isMobileMenuOpen ? "fa-times" : "fa-bars"
                   } text-lg`}
                 ></i>
-              </button>
+              </button> */}
             </div>
           </div>
 
           {/* Mobile Menu */}
-          {isMobileMenuOpen && (
+          {/* {isMobileMenuOpen && (
             <div className="lg:hidden border-t border-gray-200 py-4 bg-white">
               <nav className="flex flex-col space-y-4 px-4">
                 <a
@@ -157,7 +159,7 @@ export default function Header() {
                 </Link>
               </nav>
             </div>
-          )}
+          )} */}
         </div>
       </header>
     </>
